@@ -1,5 +1,3 @@
-  GNU nano 2.9.3                                                                                    connect.py                                                                                    Modified  
-
 #!/usr/bin/python
 # VERSION 3.6.9 
 # before running this run the code on your shell -> pip3 install psycopg2
@@ -15,4 +13,3 @@ cur.execute("INSERT INTO testdb (ID,NAME,PHONE,ADDRESS,SALARY) VALUES (1, 'Satis
 conn.commit()
 print("Records created successfully")
 conn.close()
-
