@@ -23,10 +23,22 @@ psql
 sudo -u postgres psql
 ```
 
+to login into a database without needing a password,
+
+```
+sudo -u user_name psql db_name
+```
+
 ### To create a user from shell directly,
 
 ```
 sudo -u postgres createuser --interactive
+```
+
+### To reset the password if you have forgotten:
+
+```
+ALTER USER user_name WITH PASSWORD 'new_password';
 ```
 
 ### To log in with ident based authentication, a Linux user with the same name as the Postgres role and database is required.
