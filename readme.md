@@ -61,8 +61,9 @@ sudo -u satishluintel psql
 ### To create a new database,
 
 ```
-createdb satishluintel
+create database satishluintel
 ```
+Note that from bash you can create a db as createdb database_name
 
 ### To list all the databases,
 
