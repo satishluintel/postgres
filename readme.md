@@ -143,3 +143,11 @@ to update data in the table,
 UPDATE test SET id = 12341 WHERE name='Satish Luintel';
 ```
 
+### Just in case you needed to purge the postgres servers and user accounts , follow these
+
+https://stackoverflow.com/questions/2748607/how-to-thoroughly-purge-and-reinstall-postgresql-on-ubuntu#2748644
+
+https://linoxide.com/linux-command/how-delete-remove-user-ubuntu/
+
+
+
