@@ -144,6 +144,12 @@ to update data in the table,
 UPDATE test SET id = 12341 WHERE name='Satish Luintel';
 ```
 
+### To export your database 
+
+```
+sudo pg_dump -d your_database -h 127.0.0.1 -p 5432 -U postgres > target_db_name.sql
+```
+
 ### Just in case you needed to purge the postgres servers and user accounts , follow these
 
 https://stackoverflow.com/questions/2748607/how-to-thoroughly-purge-and-reinstall-postgresql-on-ubuntu#2748644
