@@ -144,6 +144,12 @@ to update data in the table,
 UPDATE test SET id = 12341 WHERE name='Satish Luintel';
 ```
 
+### To check your database size
+
+```
+SELECT pg_size_pretty (pg_database_size ('your_database_name'));
+```
+
 ### To export your database 
 
 ```
