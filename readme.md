@@ -65,6 +65,12 @@ create database satishluintel
 ```
 Note that from bash you can create a db as createdb database_name
 
+### To rename a database,
+
+```
+alter database "old_db" rename to "new_db"
+``` 
+
 ### To list all the databases,
 
 ```
