@@ -156,6 +156,11 @@ UPDATE test SET id = 12341 WHERE name='Satish Luintel';
 SELECT pg_size_pretty (pg_database_size ('your_database_name'));
 ```
 
+### To check SIZE of all databases
+```
+SELECT pg_database.datname as "database_name", pg_database_size(pg_database.datname)/1024/1024 AS size_in_mb FROM pg_database ORDER by size_in_mb DESC;
+```
+
 ### To export your database 
 
 ```
