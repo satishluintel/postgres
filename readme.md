@@ -138,6 +138,8 @@ to add some column in the table,
 ALTER TABLE test  ADD some_date date;
 ```
 
+remember that some_date is the name of the column to add to the table, and date is the data type. Data types can be int, text, date etc. 
+
 to delete the column,
 
 ```
