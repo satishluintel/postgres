@@ -29,6 +29,71 @@ to login into a database without needing a password,
 sudo -u user_name psql db_name
 ```
 
+
+### To expose your Postgres Server Port for Remote Login
+
+First check by telnet if you succeed, 
+
+```
+telnet your_server_IP 5432
+```
+
+The error should be 'Connection Refused' , if postgres is not configured for a remote login.
+
+Now, to fix this, find the Postgres configuration file,
+
+```
+find / -name "postgresql.conf"
+```
+
+Sample output:
+/usr/lib/tmpfiles.d/postgresql.conf
+/etc/postgresql/10/main/postgresql.conf
+
+Open the /etc/... file and replace the line 
+
+```
+listen_addresses = 'localhost'
+```
+
+with 
+
+```
+listen_addresses = '*'
+```
+
+i.e your server will now listen connections from all IP Addresses
+
+After this restart the server,
+
+```
+sudo systemctl restart postgresql.service
+
+```
+
+If you check now with nmap or any other port scanning tool, you should find your 5432 port open.
+However, to connect to this server using psql, configure pg_hba.conf file in the same directory as the conf file above,
+add the following entries to the end of the file.
+
+```
+host    all             all              0.0.0.0/0                       md5
+host    all             all              ::/0                            md5
+```
+
+Finally, restart the server,
+
+```
+sudo systemctl restart postgresql.service
+
+```
+
+and connect to the server as,
+
+```
+$ psql -h your_server_IP_ADDRESS -U postgres
+```
+
+
 ### To create a user from shell directly,
 
 ```
