@@ -11,10 +11,22 @@ sudo apt install postgresql postgresql-contrib
 sudo -i -u postgres
 ```
 
-to access the prompt, simply type
+The console will appear like
+
+```
+postgres@linux_username:~$
+```
+
+to access the Postgres prompt then , simply type
 
 ```
 psql
+```
+
+and you will see
+
+```
+postgres#
 ```
 
 ### If you want to directly log in to postgres
